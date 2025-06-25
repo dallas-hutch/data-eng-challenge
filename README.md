@@ -90,11 +90,6 @@ python app.py
 - [x] `GET /api/data-quality`
 - [ ] Additional endpoints: ___________
 
-### Example Requests
-
-```bash
-
-```
 
 ## Testing
 
@@ -143,8 +138,8 @@ curl "http://localhost:5000/api/sales/daily?start_date=invalid&end_date=2024-01-
 ### Known Issues
 
 1. **Issue:** [The handling of the DST fall back is not working as intended. It seems like pytz can handle ambiguous time errors and then I should be able to localize and force DST to be true. If working on this, I'd need to be do some debugging to see where this part of the parser is going wrong. Possibility for slow API requests for large date ranges. The daily summary model specifically has an un-optimized query to initially pull data. I also think FastAPI framework works better at handling large datasets and could be beneficial in a production system.]
-   **Impact:** [First, a failed API unit test due to the DST fall back not being handled properly. This will also impact the get request for that timestamp day.]
-   **Workaround:** [If any]
+**Impact:** [There is a failed API unit test due to the DST fall back not being handled properly. This will also impact the get request for that timestamp day.]
+**Workaround:** [Avoiding fall back date until it's fixed.]
 
 2. **Performance:** [Query optimization could use work, especially as the dataset becomes larger. Need to increase flexibility to handle more timestamp data errors like the DST fall back.]
 
