@@ -9,7 +9,7 @@
 ```bash
 # Setup instructions
 # 1. Clone the repo
-git clone https://github.com/your-username/data-eng-challenge.git
+git clone https://github.com/dallas-hutch/data-eng-challenge.git
 cd data-eng-challenge
 
 # 2. (Optional but recommended) Create a virtual environment
